@@ -1,0 +1,33 @@
+﻿@model  IEnumerable<Polizia.Models.ListaTot>
+@{
+    ViewBag.Title = "TotPunti";
+}
+
+
+
+<h2 class="text-center">Verbali ordinati in base al N° di verbali a persona</h2>
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <table class="table table-striped w-50 mx-auto" >
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Totale Punti</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Polizia.Models.ListaTot t in Model)
+                {
+                    <tr>
+                        <td>@t.Nome</td>
+                        <td>@t.PuntiTotali</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+

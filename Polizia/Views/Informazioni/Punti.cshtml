@@ -1,0 +1,36 @@
+﻿@model  IEnumerable<Polizia.Models.ListaTot>
+@{
+    ViewBag.Title = "Punti";
+}
+
+<h2>Verbali con almeno 10 punti decurtati </h2>
+
+<table class="table table-striped ">
+    <thead>
+        <tr>
+            <th class="text-center">Nome</th>
+            <th class="text-center">Cognome</th>
+            <th class="text-center">Importo</th>
+            <th class="text-center">Punti Decurtati</th>
+            <th class="text-center">Data violazione</th>
+            
+         
+            
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Polizia.Models.ListaTot t in Model)
+        {
+            <tr>
+                <td class="text-center">@t.Nome</td>
+                <td class="text-center">@t.Cognome</td>
+                <td class="text-center">@t.Importo</td>
+                <td class="text-center">@t.DecurtamentoPunti</td>
+                <td class="text-center" >@t.DataViolazione.ToShortDateString()</td>
+               
+
+            </tr>
+        }
+    </tbody>
+</table>

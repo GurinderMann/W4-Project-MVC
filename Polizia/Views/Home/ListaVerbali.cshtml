@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Polizia.Models.Verbali>
+
+@{
+    ViewBag.Title = "ListaVerbali";
+}
+
+<h2>ListaVerbali</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Data Violazione</th>
+            <th>Indirizzo</th>
+            <th>Data Trascrizione</th>
+            <th>Importo</th>
+            <th>Decretamento</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Polizia.Models.Verbali v in Model)
+        {
+            <tr>
+                <td>@v.DataViolazione.ToShortDateString()</td>
+                <td>@v.Indirizzo</td>
+                <td>@v.DataTrascrizione.ToShortDateString()</td>
+                <td>@v.Importo</td>
+                <td>@v.DecretamentoPunti</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

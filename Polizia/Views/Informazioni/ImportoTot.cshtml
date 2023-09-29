@@ -1,0 +1,35 @@
+﻿@model  IEnumerable<Polizia.Models.ListaTot>
+@{
+    ViewBag.Title = "ImportoTot";
+}
+<h2>Verbali con Importo maggiore di 400€</h2>
+
+<table class="table table-striped  ">
+    <thead>
+        <tr class="table-primary">
+            <th  class="text-center ">Nome</th>
+            <th class="text-center">Cognome</th>
+            <th class="text-center">Importo</th>
+            <th class="text-center">Punti Decurtati</th>
+            <th class="text-center">Data violazione</th>
+
+
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Polizia.Models.ListaTot t in Model)
+        {
+            <tr class="table-info"  >
+                <td class="text-center">@t.Nome</td>
+                <td class="text-center">@t.Cognome</td>
+                <td class="text-center">@t.Importo</td>
+                <td class="text-center">@t.DecurtamentoPunti</td>
+                <td class="text-center">@t.DataViolazione.ToShortDateString()</td>
+
+
+            </tr>
+        }
+    </tbody>
+</table>

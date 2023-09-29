@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<div class="container mt-5">
+    <h2>Polizia Municipale</h2>
+    <p>Possibilità di visualizzare diversi verbali in base alla selezione desiderata:</p>
+
+    <div class="row mt-3">
+        <div class="col-md-6 mb-3">
+            <div class="card" style="height: 180px;">
+                <div class="card-body">
+                    <h5 class="card-title">Visualizza verbali con importo superiore a 400€</h5>
+                    <p class="card-text">Trova i verbali con un importo maggiore di 400€.</p>
+                    <a href="@Url.Action("ImportoTot", "Informazioni")" class="btn btn-outline-primary btn-block">Vai</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <div class="card" style="height: 180px; ">
+                <div class="card-body">
+                    <h5 class="card-title">Visualizza verbali con punti decurtati ≥ 10</h5>
+                    <p class="card-text">Trova i verbali con un punteggio di decurtazione di almeno 10 punti.</p>
+                    <a href="@Url.Action("Punti", "Informazioni")" class="btn btn-outline-primary btn-block">Vai</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <div class="card" style="height: 180px; ">
+                <div class="card-body">
+                    <h5 class="card-title">Visualizza punti decurtati per le persone registrate nell'anagrafe</h5>
+                    <p class="card-text">Trova i punti decurtati in base alle persone registrate nell'anagrafe.</p>
+                    <a href="@Url.Action("TotPunti", "Informazioni")" class="btn btn-outline-primary btn-block">Vai</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <div class="card" style="height: 180px;">
+                <div class="card-body">
+                    <h5 class="card-title">Visualizza il totale dei verbali per le persone registrate nell'anagrafe</h5>
+                    <p class="card-text">Trova il totale dei verbali in base alle persone registrate nell'anagrafe.</p>
+                    <a href="@Url.Action("TotVerbali", "Informazioni")" class="btn btn-outline-primary btn-block">Vai</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

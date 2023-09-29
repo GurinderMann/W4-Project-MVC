@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Polizia.Models.Trasgressori>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container mt-5">
+    <h2>Polizia Municipale</h2>
+    <h4 class="mt-3">Benvenuto, scegli un'operazione da effettuare:</h4>
+
+   
+            <a href="@Url.Action("Anagrafe", "Home")" class="btn btn-outline-primary btn-block">Anagrafica</a>
+       
+       
+      
+            <a href="@Url.Action("ListaVerbali", "Home")" class="btn btn-outline-primary btn-block">Lista Verbali</a>
+       
+    
+
+    <div class="mt-5">
+        <h4>Anagrafica per un nuovo verbale</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    
+                    <th>Nome</th>
+                    <th>Cognome</th>
+                    <th>Codice Fiscale</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        
+                        <td>@item.Nome</td>
+                        <td>@item.Cognome</td>
+                        <td>@item.CodiceFiscale</td>
+                        <td>
+                            <a href="@Url.Action("Verbale", "Home", new { idAnagrafica = item.IdAnagrafica })" class="btn btn-primary">Nuovo Verbale</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
